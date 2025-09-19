@@ -23,7 +23,7 @@ describe "Integration" do
     end
     
     describe "requests with camelCase and predicate methods" do
-      it "convert method names to vk.com format" do
+      it "convert method names to vk.ru format" do
         expect(vk.is_app_user?).to be_truthy
       end
     end

@@ -9,7 +9,7 @@ module MechanizedAuthorization
         configure
         agent.get VkontakteApi.authorization_url(scope: scope, type: :client)
         
-        agent.page.form_with(action: /login.vk.com/) do |form|
+        agent.page.form_with(action: /login.vk.ru/) do |form|
           form.email = settings.email
           form.pass  = settings.password
         end.submit
