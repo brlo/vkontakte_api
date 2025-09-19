@@ -6,7 +6,7 @@ module VkontakteApi
     # Authorization options.
     OPTIONS = {
       client: {
-        site:          'https://oauth.vk.com',
+        site:          'https://oauth.vk.ru',
         authorize_url: '/authorize',
         token_url:     '/access_token'
       },
