@@ -56,7 +56,7 @@ end
 
 ### File upload
 
-Files can be uploaded to VKontakte in several steps: first you need to call an API method that returns a URL to upload to; then upload the file(s) and in some cases call another finalization API method with uploaded file params. The API methods to call depend on the uploaded file type and are described in the [documentation](https://vk.com/dev/upload_files).
+Files can be uploaded to VKontakte in several steps: first you need to call an API method that returns a URL to upload to; then upload the file(s) and in some cases call another finalization API method with uploaded file params. The API methods to call depend on the uploaded file type and are described in the [documentation](https://vk.ru/dev/upload_files).
 
 Files are transferred in a Hash format, where key is the name of the request parameter (described in documentation, for example `photo` when uploading photos), and the value is an array composed of 2 strings: full path to the file and it's MIME-type:
 
@@ -78,13 +78,13 @@ The `upload` method returns VKontakte server response converted to `Hashie::Mash
 
 Most of methods require an access token to be called. To get this token, you can use authorization built in `vkontakte_api` or any other solution (for example [OmniAuth](https://github.com/intridea/omniauth)). In the latter case the result of authorization process is a token, which needs to be passed into `VkontakteApi::Client.new`.
 
-VKontakte API provides 3 types of authorization: for webpages, for client applications (mobile or desktop, having access to authorized browsers) and special authorization type for servers to invoke administration methods without user authorization. More details are available [here](https://vk.com/dev/authentication); let's see how to use them with `vkontakte_api`.
+VKontakte API provides 3 types of authorization: for webpages, for client applications (mobile or desktop, having access to authorized browsers) and special authorization type for servers to invoke administration methods without user authorization. More details are available [here](https://vk.ru/dev/authentication); let's see how to use them with `vkontakte_api`.
 
 For the purposes of authorization you have to specify `app_id` (application ID), `app_secret` (secret key) and `redirect_uri` (a URL where the user will be redirected after successful authorization) in the `VkontakteApi.configure` settings. For more information about configuring `vkontakte_api` see below.
 
 ##### Website
 
-Website authorization goes in 2 steps. First user is redirected to VKontakte website to confirm the rights of a website to access his data. The list of available permissions is avaliable [here](https://vk.com/dev/permissions). Let's suppose one wants to access friends (`friends`) and photos (`photos`) of the user.
+Website authorization goes in 2 steps. First user is redirected to VKontakte website to confirm the rights of a website to access his data. The list of available permissions is avaliable [here](https://vk.ru/dev/permissions). Let's suppose one wants to access friends (`friends`) and photos (`photos`) of the user.
 
 According to the [guidelines](http://tools.ietf.org/html/draft-ietf-oauth-v2-30#section-10.12) in OAuth2 protocol the `state` parameter should be passed with a random number in order to prevent [CSRF](http://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D0%BB%D0%BA%D0%B0_%D0%BC%D0%B5%D0%B6%D1%81%D0%B0%D0%B9%D1%82%D0%BE%D0%B2%D1%8B%D1%85_%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%BE%D0%B2).
 
@@ -268,7 +268,7 @@ By default the `Net::HTTP` Faraday adapter is used but you can choose
 [any other adapter](https://github.com/lostisland/faraday/blob/master/lib/faraday/adapter.rb)
 supported by `faraday`.
 
-VKontakte [allows](https://vk.com/dev/api_requests)
+VKontakte [allows](https://vk.ru/dev/api_requests)
 using either `GET` or `POST` requests when calling API methods.
 `vkontakte_api` uses `POST` by default but you can change that by
 setting `http_verb` to `:get`.

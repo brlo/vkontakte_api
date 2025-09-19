@@ -4,7 +4,7 @@ module VkontakteApi
   # It uses Faraday with middleware underneath the hood.
   module API
     # URL prefix for calling API methods.
-    URL_PREFIX = 'https://api.vk.com/method'
+    URL_PREFIX = 'https://api.vk.ru/method'
     
     class << self
       # API method call.
